@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Saturne AR</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin:0; overflow:hidden;">
+
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+
+      <a-assets>
+        <img id="saturneTex" src="saturne.jpg">
+        <img id="anneauxTex" src="anneaux.png">
+      </a-assets>
+
+      <!-- Utilise ton propre marqueur (change Lune.patt si tu veux) -->
+      <a-marker type="pattern" url="Lune.patt">
+
+        <!-- Saturne -->
+        <a-sphere
+          position="0 1.6 0"
+          radius="0.8"
+          src="#saturneTex"
+          rotation="26 0 0"
+          animation="property: rotation; to: 26 360 0; loop: true; dur: 30000; easing: linear">
+        </a-sphere>
+
+        <!-- Anneaux -->
+        <a-torus
+          position="0 1.6 0"
+          radius="1.5"
+          radius-tubular="0.05"
+          src="#anneauxTex"
+          rotation="90 0 0"
+          animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
+        </a-torus>
+
+        <!-- Texte SATURNE au-dessus -->
+        <a-text
+          value="SATURNE"
+          position="0 2.8 0"
+          align="center"
+          color="#FFD700"
+          width="4"
+          animation="property: position; to: 0 3 0; dir: alternate; dur: 2000; loop: true">
+        </a-text>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+
+    </a-scene>
+
+  </body>
+</html>
