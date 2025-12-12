@@ -30,14 +30,16 @@
         </a-sphere>
 
         <!-- Anneaux -->
-        <a-torus
-          position="0 1.6 0"
-          radius="1.5"
-          radius-tubular="0.05"
-          src="#anneauxTex"
-          rotation="90 0 0"
-          animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
-        </a-torus>
+        <a-plane
+  position="0 1.6 0"
+  width="4"
+  height="4"
+  src="#anneauxTex"
+  rotation="90 0 0"
+  transparent="true"
+  alpha-test="0.1"
+  animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
+</a-plane>
 
         <!-- Texte SATURNE au-dessus -->
         <a-text
