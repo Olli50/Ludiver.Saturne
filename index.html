@@ -14,13 +14,14 @@
 
       <a-assets>
         <img id="saturneTex" src="saturne.jpg">
-        <img id="anneauxTex" src="anneaux.png?ver=2">
+        <img id="anneauxTex" src="anneaux.png">
       </a-assets>
 
       <a-marker type="pattern" url="Saturne.patt">
 
-        <!-- Saturne -->
+        <!-- Saturne (inclinaison 26°, rotation lente) -->
         <a-sphere
+          id="saturne"
           position="0 1.6 0"
           radius="0.8"
           src="#saturneTex"
@@ -28,27 +29,27 @@
           animation="property: rotation; to: 26 360 0; loop: true; dur: 30000; easing: linear">
         </a-sphere>
 
-        <!-- Anneaux (disque plat) -->
+        <!-- ANNEAUX (disque transparent, centré sur la planète, plus larges) -->
         <a-plane
+          id="anneaux"
           position="0 1.6 0"
-          width="4"
-          height="4"
+          width="3.5"
+          height="3.5"
           src="#anneauxTex"
-          rotation="90 0 0"
+          rotation="116 0 0"    <!-- 90° pour le plan + 26° inclinaison -->
           transparent="true"
           alpha-test="0.1"
-          side="double"
-          animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
+          animation="property: rotation; to: 116 360 0; loop: true; dur: 30000; easing: linear">
         </a-plane>
 
-        <!-- Texte SATURNE -->
+        <!-- TEXTE -->
         <a-text
           value="SATURNE"
-          position="0 2.8 0"
+          position="0 3.1 0"
           align="center"
           color="#FFD700"
           width="4"
-          animation="property: position; to: 0 3 0; dir: alternate; dur: 2000; loop: true">
+          animation="property: position; to: 0 3.3 0; dir: alternate; dur: 2000; loop: true">
         </a-text>
 
       </a-marker>
