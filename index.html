@@ -17,7 +17,6 @@
         <img id="anneauxTex" src="anneaux.png">
       </a-assets>
 
-      <!-- Utilise ton propre marqueur (change Lune.patt si tu veux) -->
       <a-marker type="pattern" url="Saturne.patt">
 
         <!-- Saturne -->
@@ -29,19 +28,20 @@
           animation="property: rotation; to: 26 360 0; loop: true; dur: 30000; easing: linear">
         </a-sphere>
 
-        <!-- Anneaux -->
+        <!-- Anneaux (disque plat) -->
         <a-plane
-  position="0 1.6 0"
-  width="4"
-  height="4"
-  src="#anneauxTex"
-  rotation="90 0 0"
-  transparent="true"
-  alpha-test="0.1"
-  animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
-</a-plane>
+          position="0 1.6 0"
+          width="4"
+          height="4"
+          src="#anneauxTex"
+          rotation="90 0 0"
+          transparent="true"
+          alpha-test="0.1"
+          side="double"
+          animation="property: rotation; to: 90 360 0; loop: true; dur: 30000; easing: linear">
+        </a-plane>
 
-        <!-- Texte SATURNE au-dessus -->
+        <!-- Texte SATURNE -->
         <a-text
           value="SATURNE"
           position="0 2.8 0"
